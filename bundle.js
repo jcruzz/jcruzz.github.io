@@ -18723,8 +18723,8 @@ module.exports = [
     thumbnail: 'https://i.imgur.com/u1zwc3I.png',
     liveLink: 'http://polling-io.herokuapp.com/',
   	github: 'https://github.com/jcruzz/Polling.io',
-    language: 'Javascript',
-    stack: 'MariaDB, React, React-Router, Redux, JSONWebToken, Redis, bcrypt, Chart.js',
+    language: 'Javascript, SQL',
+    stack: 'MariaDB, React, React-Router, JSONWebToken, Redis, bcrypt, Chart.js, Node/Express',
     info: `
           I created this application with the intention for people to create polls in order to enhance their discussion.
           In order to create polls, you must make an account since polls are bound to a unique user. However, as someone
@@ -18736,36 +18736,55 @@ module.exports = [
     thumbnail: 'https://i.imgur.com/FTtFOjm.png',
     liveLink: 'https://ancient-sierra-43985.herokuapp.com/',
   	github: 'https://github.com/jcruzz/country-force-graph',
-    language: null,
-    stack: null,
-    info: null
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a force graph created by connecting the countries with other countries located very closely
+            or are bordering each other. The nodes used for the graph are the flags of each respective countries,
+            which are linked with lines.
+          `
   },
   {
   	name: 'Just.ly',
     thumbnail: 'https://i.imgur.com/OKToW2a.png',
   	liveLink: 'https://just-ly.herokuapp.com/',
     github: 'https://github.com/jcruzz/just.ly',
-    language: null,
-    stack: null,
-    info: null
+    language: 'Javascript',
+    stack: 'Redis, Node/Express, Axios, shortid',
+    info: `
+            This is a url-shortening microservice that uses Redis as the database for constant database lookups. 
+            The key of the database is the generated shortid (which uses the endpoint '/:id'), and the value that 
+            comes out is the website it shortened. The system design has two approaches, to create a shortened url, and to use a shortened url. 
+          `
   },
   {
     name: 'Global Heat Map',
     thumbnail: 'https://i.imgur.com/6aZiHY0.png',
     liveLink: 'https://codepen.io/jvcruz/full/jZoejG/',
     github: 'https://github.com/jcruzz/global-heat-map',
-    language: null,
-    stack: null,
-    info: null
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a heat map created to measure the land surface temperature from 1753 to 2015. 
+            The graph is populated by bars that correspends to the years and months respectively 
+            located at the X and Y axis, and using the color to determine the temperature. More
+            information can be shown by hoving over the bar.
+          `
   },
   {
     name: 'JWT-Auth React Boilerplate',
     thumbnail: null,
     liveLink: 'https://frozen-depths-11875.herokuapp.com/',
     github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql',
-    language: null,
-    stack: null,
-    info: null
+    language: 'Javascript',
+    stack: 'MariaDB, React, React-Router, JSONWebToken, Redis, bcrypt, Chart.js, Node/Express',
+    info: `
+            This is a boilerplate I've created in order to ease future developments when I develop
+            future projects that require authentication. It's also doubles as a React-Router boilerplate.
+            Future developments will include styling, making a different version with a different database,
+            and include social media authentication in order to hit the ground running when developing
+            a new project. 
+          `
   },
 ];
 
@@ -18774,6 +18793,48 @@ module.exports = [
 /***/ (function(module, exports) {
 
 module.exports = [
+	{
+	  	name: 'Weather App',
+	    thumbnail: 'https://i.imgur.com/QzgNZfA.png',
+	  	liveLink: 'https://codepen.io/jvcruz/full/wqyXoL/',
+	    github: 'https://github.com/jcruzz/Weather-App',
+	    language: 'Javascript',
+	    stack: 'HTML, CSS',
+	    info: `
+							An application I created in August 2017 that uses the OpenWeatherMap 
+							Api to generate the Local Weather. The interface comes with a switch 
+							where you can switch between Celsius and Fahrenheit. Possibly due to 
+							the time I've created this, the image links to help generate the 
+							weather visual expired.
+	          `
+	},
+	{
+	  	name: 'NBA Quotes',
+	    thumbnail: 'https://i.imgur.com/gL6EC1y.png',
+	  	liveLink: 'https://codepen.io/jvcruz/full/prNYrd/',
+	    github: 'https://github.com/jcruzz/NBA-Quotes',
+	    language: 'Javascript',
+	    stack: 'HTML, CSS',
+	    info: `
+	            A Project I did a last year.  This front end project utilizes basic 
+	            Javascript in generating random quotes. The quotes generated can be 
+	            tweeted using a convenient button that grabs whatever generated quote 
+	            and opens up a new window.
+	          `
+	},
+	{
+	  	name: 'Scottie Pippen Tribute Page',
+	    thumbnail: 'https://i.imgur.com/uMj31sQ.png',
+	  	liveLink: 'https://codepen.io/jvcruz/full/YxGxGr/',
+	    github: 'https://github.com/jcruzz/SP-Tribute-Page',
+	    language: 'Javascript',
+	    stack: 'HTML, CSS',
+	    info: `
+	            My first completed page that started my journey in the world of 
+	            development. This is a simple tribute page for an overlooked legend in 
+	            Scottie Pippen.
+	          `
+	},
 ];
 
 /***/ }),
@@ -18782,34 +18843,70 @@ module.exports = [
 
 module.exports = [
   {
-  	name: 'Just.ly',
+    name: 'Just.ly',
     thumbnail: 'https://i.imgur.com/OKToW2a.png',
-  	liveLink: 'https://just-ly.herokuapp.com/',
-    github: 'https://github.com/jcruzz/just.ly'
+    liveLink: 'https://just-ly.herokuapp.com/',
+    github: 'https://github.com/jcruzz/just.ly',
+    language: 'Javascript',
+    stack: 'Redis, Node/Express, Axios, shortid',
+    info: `
+            This is a url-shortening microservice that uses Redis as the database for constant database lookups. 
+            The key of the database is the generated shortid (which uses the endpoint '/:id'), and the value that 
+            comes out is the website it shortened. The system design has two approaches, to create a shortened url, and to use a shortened url. 
+          `
   },
   {
   	name: 'File Metadata Microservice',
     thumbnail: null,
   	liveLink: 'https://sleepy-wave-24750.herokuapp.com/',
-    github: 'https://github.com/jcruzz/file-metadata-microservice'
+    github: 'https://github.com/jcruzz/file-metadata-microservice',
+    language: 'Javascript',
+    stack: 'Node/Express, Multer module',
+    info: `
+            Using the Multer module, this full stack Javascript 
+            application will take in any file given to the input, 
+            and redirects you to a JSON response showing its size. 
+          `
   },
   {
   	name: 'Image Search Abstraction Layer',
     thumbnail: null,
   	liveLink: 'https://dry-caverns-40752.herokuapp.com/',
-    github: 'https://github.com/jcruzz/image-search-abstraction-layer'
+    github: 'https://github.com/jcruzz/image-search-abstraction-layer',
+    language: 'Javascript',
+    stack: 'MongoDB (Mongoose), Node/Express, Google Custom Search API',
+    info: `
+            A backend program that takes in a search query that returns a JSON 
+            response of image links, and original location from the Google Custom Search API. 
+            Within the root endpoint '/', it displays the last 10 queries with a timestamp.
+
+          `
   },
   {
   	name: 'Request Header Parser',
     thumbnail: null,
   	liveLink: 'https://tranquil-fjord-31587.herokuapp.com/',
-    github: 'https://github.com/jcruzz/request-header-parser'
+    github: 'https://github.com/jcruzz/request-header-parser',
+    language: 'Javascript',
+    stack: 'Node/Express',
+    info: `
+            Returns the User Agent (Browser) OS information, 
+            the language of your browser, and the public IP 
+            address of your system in a JSON response. 
+          `
   },
   {
   	name: 'Timestamp Converter',
     thumbnail: null,
   	liveLink: 'https://bog-tile.glitch.me/',
-    github: 'https://github.com/jcruzz/timestamp-converter'
+    github: 'https://github.com/jcruzz/timestamp-converter',
+    language: 'Javascript',
+    stack: 'Node/Express',
+    info: `
+            A backend application that will take either a natural 
+            date format or a Unix timestamp that returns both natural 
+            and Unix timestamps as a JSON response.
+          `
   },
 ];
 
@@ -18823,43 +18920,91 @@ module.exports = [
     name: 'Polling.io',
     thumbnail: 'https://i.imgur.com/u1zwc3I.png',
     liveLink: 'http://polling-io.herokuapp.com/',
-    github: 'https://github.com/jcruzz/Polling.io'
+    github: 'https://github.com/jcruzz/Polling.io',
+    language: 'Javascript, SQL',
+    stack: 'MariaDB, React, React-Router, JSONWebToken, Redis, bcrypt, Chart.js, Node/Express',
+    info: `
+          I created this application with the intention for people to create polls in order to enhance their discussion.
+          In order to create polls, you must make an account since polls are bound to a unique user. However, as someone
+          without an account, you're free to vote in polls at your convenience.
+          `
   },
   {
   	name: 'Redux Registration Form',
-    thumbnail: null,
+    thumbnail: 'https://i.imgur.com/A7gDSJ1.png',
     liveLink: 'https://safe-woodland-54646.herokuapp.com/',
-  	github: 'https://github.com/jcruzz/Registration-Form-Redux'
+  	github: 'https://github.com/jcruzz/Registration-Form-Redux',
+    language: 'Javascript',
+    stack: 'PostgreSQL(Bookshelf), React, React-Router, Redux, Node/Express, bcrypt',
+    info: `
+           This is a multi-page application that serves is a sign up sheet that registers accounts. Everytime you click
+           next on a page, information saves into the database as you go through the sign up form. 
+           This was created in a 24 hour challenge that ended up into deployment.
+          `
   },
   {
   	name: 'Saber Forums',
-    thumbnail: null,
+    thumbnail: 'https://i.imgur.com/VOgeNzZ.png',
   	liveLink: 'http://saber-forums.herokuapp.com/#/',
-    github: 'https://github.com/jcruzz/Saber-Forums'
+    github: 'https://github.com/jcruzz/Saber-Forums',
+    language: 'Javascript',
+    stack: 'MongoDB(Mongoose), React, React-Router, Node/Express, Passport',
+    info: `
+           This is a forum created to be viewed by the public, but can only create threads and commented on by
+           registered users. I developed this app with a team in an Agile environment. My role was to be in charge
+           of the authentication suite, and rendering forum threads and thread view.
+          `
   },
   {
   	name: 'WhaleThen',
     thumbnail: null,
   	liveLink: null,
-    github: 'https://github.com/jcruzz/whalethen'
+    github: 'https://github.com/jcruzz/whalethen',
+    language: 'Javascript',
+    stack: 'MongoDB(Mongoose), React, React-Router, Redux, Redux-Thunk, Node/Express, Annyang Speech Module',
+    info: `
+           This is a community-based trip planning application that renders a calendar developed with a team
+           in an Agile environment. My job was to introduce Redux to an existing React codebase in order to 
+           ease future developments in a growing codebase.
+          `
   },
   {
   	name: 'Water Walls',
     thumbnail: null,
   	liveLink: null,
-    github: 'https://github.com/jcruzz/water-walls'
+    github: 'https://github.com/jcruzz/water-walls',
+    language: 'Javascript',
+    stack: 'Node/Express',
+    info: `
+           This is a full stack application that uses the backend to take in an input of integers, access an algorithm,
+           and return an api that contains the results returned by the algorithm. The algorithm solves the problem of having
+           walls of varying height next to each other, and seeing the most water being captured between specific walls.
+          `
   },
   {
   	name: 'Char Sortinator',
-    thumbnail: null,
+    thumbnail: 'https://i.imgur.com/s1amF2S.png',
   	liveLink: 'https://damp-falls-31971.herokuapp.com/',
-    github: 'https://github.com/jcruzz/Char-Sortinator-Part-Deux'
+    github: 'https://github.com/jcruzz/Char-Sortinator-Part-Deux',
+    language: 'Javascript',
+    stack: 'Node/Express',
+    info: `
+           This is a small application that takes in an input of a string, uses the server as a sorting microservice,
+           and renders a resulting string with the characters sorted lexicographically.
+          `
   },
   {
   	name: 'PokeRoster',
-    thumbnail: null,
+    thumbnail: 'https://i.imgur.com/0Rrq8h0.png',
   	liveLink: 'https://pokeroster.herokuapp.com/',
-    github: 'https://github.com/jcruzz/PokeRoster'
+    github: 'https://github.com/jcruzz/PokeRoster',
+    language: 'Javascript',
+    stack: 'MongoDB(Mongoose), React, React-Router, Node/Express',
+    info: `
+           This is a roster generator that uses the Pokemon module to list a bunch of pokemon, and uses 
+           react-pokemon-gif to generate visuals on a Pokemon roster being drafted. The roster is then 
+           saved to the database, and is available for viewing.
+          `
   },
 ];
 
@@ -18869,28 +19014,54 @@ module.exports = [
 
 module.exports = [
   {
-  	name: 'Country Force Graph',
+    name: 'Country Force Graph',
     thumbnail: 'https://i.imgur.com/FTtFOjm.png',
     liveLink: 'https://ancient-sierra-43985.herokuapp.com/',
-  	github: 'https://github.com/jcruzz/country-force-graph'
+    github: 'https://github.com/jcruzz/country-force-graph',
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a force graph created by connecting the countries with other countries located very closely
+            or are bordering each other. The nodes used for the graph are the flags of each respective countries,
+            which are linked with lines.
+          `
   },
   {
   	name: 'Biking Allegation Scatterplot',
     thumbnail: 'https://i.imgur.com/M1i3eVy.png',
     liveLink: 'https://codepen.io/jvcruz/full/oERGxa/',
-  	github: 'https://github.com/jcruzz/biking-allegation-scatterplot'
+  	github: 'https://github.com/jcruzz/biking-allegation-scatterplot',
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a scatterplot conducted on the 35 fastest times up Alpe d'Huez, and explaining the type of 
+            Doping Allegation if any drugs were used on the biker to enhance their performance.
+          `
   },
   {
-  	name: 'Global Heat Map',
+    name: 'Global Heat Map',
     thumbnail: 'https://i.imgur.com/6aZiHY0.png',
     liveLink: 'https://codepen.io/jvcruz/full/jZoejG/',
-  	github: 'https://github.com/jcruzz/global-heat-map'
+    github: 'https://github.com/jcruzz/global-heat-map',
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a heat map created to measure the land surface temperature from 1753 to 2015. 
+            The graph is populated by bars that correspends to the years and months respectively 
+            located at the X and Y axis, and using the color to determine the temperature. More
+            information can be shown by hoving over the bar.
+          `
   },
   {
   	name: 'GDP Bar Chart',
     thumbnail: 'https://i.imgur.com/hVGR4pe.png',
     liveLink: 'https://codepen.io/jvcruz/full/wybgKq/',
-  	github: 'https://github.com/jcruzz/d3-gdp-bar-chart'
+  	github: 'https://github.com/jcruzz/d3-gdp-bar-chart',
+    language: 'Javascript',
+    stack: 'D3.js, HTML, CSS',
+    info: `
+            This is a simple bar graph that uses an api request to grab the GDP across the years.
+          `
   },
 ];
 
@@ -18900,22 +19071,41 @@ module.exports = [
 
 module.exports = [
   {
-    name: 'JWT-Auth React Starter',
+    name: 'JWT-Auth React Boilerplate',
     thumbnail: null,
     liveLink: 'https://frozen-depths-11875.herokuapp.com/',
-    github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql'
+    github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql',
+    language: 'Javascript, SQL',
+    stack: 'MariaDB, React, React-Router, JSONWebToken, Redis, bcrypt, Chart.js, Node/Express',
+    info: `
+            This is a boilerplate I've created in order to ease future developments when I develop
+            future projects that require authentication. It's also doubles as a React-Router boilerplate.
+            Future developments will include styling, making a different version with a different database,
+            and include social media authentication in order to hit the ground running when developing
+            a new project. 
+          `
   },
   {
   	name: 'React with Redux Starter',
     thumbnail: null,
   	liveLink: null,
-    github: 'https://github.com/jcruzz/redux-starter'
+    github: 'https://github.com/jcruzz/redux-starter',
+    language: 'Javascript',
+    stack: 'React, Redux, Node/Express',
+    info: `
+            A React boilerplate that comes with Redux.
+          `
   },
   {
   	name: 'React Starter',
     thumbnail: null,
   	liveLink: null,
-    github: 'https://github.com/jcruzz/react-starter'
+    github: 'https://github.com/jcruzz/react-starter',
+    language: 'Javascript',
+    stack: 'React, Node/Express',
+    info: `
+            A React boilerplate.
+          `
   },
 ];
 
