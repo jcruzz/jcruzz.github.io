@@ -18391,7 +18391,7 @@ var Header = function Header() {
           { className: 'nav-item' },
           _react2.default.createElement(
             'a',
-            { className: 'nav-link', href: 'https://github.com/jcruzz' },
+            { className: 'nav-link', target: 'blank_', href: 'https://github.com/jcruzz' },
             'Github'
           )
         ),
@@ -18400,7 +18400,7 @@ var Header = function Header() {
           { className: 'nav-item' },
           _react2.default.createElement(
             'a',
-            { className: 'nav-link', href: 'https://www.linkedin.com/in/jcruzz/' },
+            { className: 'nav-link', target: 'blank_', href: 'https://www.linkedin.com/in/jcruzz/' },
             'LinkedIn'
           )
         )
@@ -18435,7 +18435,7 @@ var About = function About() {
       null,
       _react2.default.createElement(
         'h1',
-        null,
+        { className: 'header' },
         'About Me'
       ),
       _react2.default.createElement(
@@ -18454,8 +18454,6 @@ var ProjectEntry = function ProjectEntry(props) {
 
   (0, _jquery2.default)('head').append('\n    <style>\n      #' + name + ' {\n        background: ' + background + ';\n        background-size: 100% 100%;\n        width: 400px;\n        height: 200px;\n      }\n    </style>\n  ');
 
-  console.log(name);
-
   return _react2.default.createElement(
     'div',
     { className: 'project-entry' },
@@ -18470,25 +18468,57 @@ var ProjectEntry = function ProjectEntry(props) {
       { id: 'project-buttons' },
       _react2.default.createElement(
         'a',
-        { href: props.github || '#', className: 'btn btn-outline-secondary' },
+        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-secondary' },
         'Github'
       ),
       props.liveLink ? _react2.default.createElement(
         'a',
-        { href: props.liveLink, className: 'btn btn-outline-secondary' },
+        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-secondary' },
         'Live Link'
       ) : null
     )
   );
 };
 
+var DetailedEntry = function DetailedEntry(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.name
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Language:',
+      _react2.default.createElement('br', null),
+      props.language || 'Unknown'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Stack:',
+      _react2.default.createElement('br', null),
+      props.stack || 'Unknown'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      ' Description:',
+      _react2.default.createElement('br', null),
+      props.info || 'None, will update'
+    )
+  );
+};
 var Projects = function Projects(props) {
   return _react2.default.createElement(
     'div',
     { id: 'projects' },
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'header' },
       'Projects'
     ),
     _react2.default.createElement(
@@ -18496,13 +18526,13 @@ var Projects = function Projects(props) {
       { id: 'project-desc-filter-buttons' },
       _react2.default.createElement(
         'button',
-        { className: 'desc btn btn-outline-light active' },
+        { onClick: props.viewHandler, className: 'desc btn btn-outline-light active' },
         'Gallery View'
       ),
       _react2.default.createElement(
         'button',
-        { className: 'desc btn btn-outline-light' },
-        'Descriptive View'
+        { onClick: props.viewHandler, className: 'desc btn btn-outline-light' },
+        'Detailed View'
       )
     ),
     _react2.default.createElement(
@@ -18539,7 +18569,7 @@ var Projects = function Projects(props) {
         'Tools'
       )
     ),
-    _react2.default.createElement(
+    props.view === 'Gallery View' ? _react2.default.createElement(
       'div',
       { id: 'project-list' },
       props.projects.map(function (project) {
@@ -18547,6 +18577,16 @@ var Projects = function Projects(props) {
           'div',
           { className: 'project-entry-outer' },
           _react2.default.createElement(ProjectEntry, project)
+        );
+      })
+    ) : _react2.default.createElement(
+      'div',
+      null,
+      props.projects.map(function (project) {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(DetailedEntry, project)
         );
       })
     )
@@ -18559,7 +18599,7 @@ var Contact = function Contact() {
     { id: 'contact' },
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'header' },
       'Contact Me'
     ),
     _react2.default.createElement(
@@ -18573,13 +18613,13 @@ var Contact = function Contact() {
       'Other Sites: ',
       _react2.default.createElement(
         'a',
-        { href: 'https://www.linkedin.com/in/jcruzz/' },
+        { target: 'blank_', href: 'https://www.linkedin.com/in/jcruzz/' },
         'LinkedIn'
       ),
       ' | ',
       _react2.default.createElement(
         'a',
-        { href: 'https://github.com/jcruzz' },
+        { target: 'blank_', href: 'https://github.com/jcruzz' },
         'Github'
       )
     ),
@@ -18600,13 +18640,27 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = {
-      filter: 'featured',
+      view: 'Gallery View',
       projects: _projects2.default
     };
     return _this;
   }
 
   _createClass(App, [{
+    key: 'handleView',
+    value: function handleView(event) {
+      var node = event.target;
+      var view = event.target.textContent;
+
+      (0, _jquery2.default)('.desc').each(function () {
+        (0, _jquery2.default)(this).removeClass('active');
+      });
+
+      (0, _jquery2.default)(node).addClass('active');
+
+      this.setState({ view: view });
+    }
+  }, {
     key: 'handleFilter',
     value: function handleFilter(event) {
       var node = event.target;
@@ -18644,7 +18698,11 @@ var App = function (_Component) {
         _react2.default.createElement(Header, null),
         _react2.default.createElement(Intro, null),
         _react2.default.createElement(About, null),
-        _react2.default.createElement(Projects, { projects: this.state.projects, handler: this.handleFilter.bind(this) }),
+        _react2.default.createElement(Projects, {
+          projects: this.state.projects,
+          view: this.state.view,
+          viewHandler: this.handleView.bind(this),
+          handler: this.handleFilter.bind(this) }),
         _react2.default.createElement(Contact, null)
       );
     }
@@ -18664,31 +18722,50 @@ module.exports = [
   	name: 'Polling.io',
     thumbnail: 'https://i.imgur.com/u1zwc3I.png',
     liveLink: 'http://polling-io.herokuapp.com/',
-  	github: 'https://github.com/jcruzz/Polling.io'
+  	github: 'https://github.com/jcruzz/Polling.io',
+    language: 'Javascript',
+    stack: 'MariaDB, React, React-Router, Redux, JSONWebToken, Redis, bcrypt, Chart.js',
+    info: `
+          I created this application with the intention for people to create polls in order to enhance their discussion.
+          In order to create polls, you must make an account since polls are bound to a unique user. However, as someone
+          without an account, you're free to vote in polls at your convenience.
+          `
   },
   {
   	name: 'Country Force Graph',
     thumbnail: 'https://i.imgur.com/FTtFOjm.png',
     liveLink: 'https://ancient-sierra-43985.herokuapp.com/',
-  	github: 'https://github.com/jcruzz/country-force-graph'
+  	github: 'https://github.com/jcruzz/country-force-graph',
+    language: null,
+    stack: null,
+    info: null
   },
   {
   	name: 'Just.ly',
     thumbnail: 'https://i.imgur.com/OKToW2a.png',
   	liveLink: 'https://just-ly.herokuapp.com/',
-    github: 'https://github.com/jcruzz/just.ly'
+    github: 'https://github.com/jcruzz/just.ly',
+    language: null,
+    stack: null,
+    info: null
   },
   {
     name: 'Global Heat Map',
     thumbnail: 'https://i.imgur.com/6aZiHY0.png',
     liveLink: 'https://codepen.io/jvcruz/full/jZoejG/',
-    github: 'https://github.com/jcruzz/global-heat-map'
+    github: 'https://github.com/jcruzz/global-heat-map',
+    language: null,
+    stack: null,
+    info: null
   },
   {
     name: 'JWT-Auth React Boilerplate',
     thumbnail: null,
     liveLink: 'https://frozen-depths-11875.herokuapp.com/',
-    github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql'
+    github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql',
+    language: null,
+    stack: null,
+    info: null
   },
 ];
 
@@ -18742,6 +18819,12 @@ module.exports = [
 /***/ (function(module, exports) {
 
 module.exports = [
+  {
+    name: 'Polling.io',
+    thumbnail: 'https://i.imgur.com/u1zwc3I.png',
+    liveLink: 'http://polling-io.herokuapp.com/',
+    github: 'https://github.com/jcruzz/Polling.io'
+  },
   {
   	name: 'Redux Registration Form',
     thumbnail: null,
@@ -18823,7 +18906,7 @@ module.exports = [
     github: 'https://github.com/jcruzz/react-router-auth-boilerplate-sql'
   },
   {
-  	name: 'React w/ Redux Starter',
+  	name: 'React with Redux Starter',
     thumbnail: null,
   	liveLink: null,
     github: 'https://github.com/jcruzz/redux-starter'
