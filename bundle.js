@@ -18509,6 +18509,20 @@ var DetailedEntry = function DetailedEntry(props) {
       ' Description:',
       _react2.default.createElement('br', null),
       props.info || 'None, will update'
+    ),
+    _react2.default.createElement(
+      'div',
+      { id: 'project-buttons' },
+      _react2.default.createElement(
+        'a',
+        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-secondary' },
+        'Github'
+      ),
+      props.liveLink ? _react2.default.createElement(
+        'a',
+        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-secondary' },
+        'Live Link'
+      ) : null
     )
   );
 };
@@ -18523,50 +18537,54 @@ var Projects = function Projects(props) {
     ),
     _react2.default.createElement(
       'div',
-      { id: 'project-desc-filter-buttons' },
+      { id: 'project-view-hub' },
       _react2.default.createElement(
-        'button',
-        { onClick: props.viewHandler, className: 'desc btn btn-outline-light active' },
-        'Gallery View'
+        'div',
+        { id: 'project-desc-filter-buttons' },
+        _react2.default.createElement(
+          'button',
+          { onClick: props.viewHandler, className: 'desc btn btn-outline-light active' },
+          'Gallery View'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.viewHandler, className: 'desc btn btn-outline-light' },
+          'Detailed View'
+        )
       ),
       _react2.default.createElement(
-        'button',
-        { onClick: props.viewHandler, className: 'desc btn btn-outline-light' },
-        'Detailed View'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { id: 'project-filter-buttons' },
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light active' },
-        'Featured'
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light' },
-        'Frontend'
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light' },
-        'Backend'
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light' },
-        'Full Stack'
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light' },
-        'Data Visualization'
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: props.handler, className: 'filter btn btn-outline-light' },
-        'Tools'
+        'div',
+        { id: 'project-filter-buttons' },
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light active' },
+          'Featured'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light' },
+          'Frontend'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light' },
+          'Backend'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light' },
+          'Full Stack'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light' },
+          'Data Visualization'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: props.handler, className: 'filter btn btn-outline-light' },
+          'Tools'
+        )
       )
     ),
     props.view === 'Gallery View' ? _react2.default.createElement(
