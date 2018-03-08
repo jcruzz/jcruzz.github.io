@@ -18483,7 +18483,7 @@ var ProjectEntry = function ProjectEntry(props) {
 var DetailedEntry = function DetailedEntry(props) {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'project-detailed-list-entry' },
     _react2.default.createElement(
       'h3',
       null,
@@ -18581,7 +18581,7 @@ var Projects = function Projects(props) {
       })
     ) : _react2.default.createElement(
       'div',
-      null,
+      { id: 'project-detailed-list' },
       props.projects.map(function (project) {
         return _react2.default.createElement(
           'div',
