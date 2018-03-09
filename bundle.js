@@ -18452,7 +18452,7 @@ var ProjectEntry = function ProjectEntry(props) {
 
   var background = props.thumbnail ? 'url(\'' + props.thumbnail + '\')' : 'url(\'https://i.imgur.com/Ey20XRP.png\')';
 
-  (0, _jquery2.default)('head').append('\n    <style>\n      #' + name + ' {\n        background: ' + background + ';\n        background-size: 100% 100%;\n        width: 400px;\n        height: 200px;\n      }\n    </style>\n  ');
+  (0, _jquery2.default)('head').append('\n    <style>\n      #' + name + ' {\n        background: ' + background + ';\n        background-size: 100% 100%;\n        border-style: solid;\n        border-width: 1px;\n        border-color: #f8f9fa;\n        border-radius: 5px;\n        width: 400px;\n        height: 200px;\n      }\n    </style>\n  ');
 
   return _react2.default.createElement(
     'div',
@@ -18468,12 +18468,12 @@ var ProjectEntry = function ProjectEntry(props) {
       { id: 'project-buttons' },
       _react2.default.createElement(
         'a',
-        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-secondary' },
+        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-light' },
         'Github'
       ),
       props.liveLink ? _react2.default.createElement(
         'a',
-        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-secondary' },
+        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-light' },
         'Live Link'
       ) : null
     )
@@ -18485,42 +18485,46 @@ var DetailedEntry = function DetailedEntry(props) {
     'div',
     { className: 'project-detailed-list-entry' },
     _react2.default.createElement(
-      'h3',
-      null,
-      props.name
-    ),
-    _react2.default.createElement(
-      'p',
-      null,
-      'Language:',
-      _react2.default.createElement('br', null),
-      props.language || 'Unknown'
-    ),
-    _react2.default.createElement(
-      'p',
-      null,
-      'Stack:',
-      _react2.default.createElement('br', null),
-      props.stack || 'Unknown'
-    ),
-    _react2.default.createElement(
-      'p',
-      null,
-      ' Description:',
-      _react2.default.createElement('br', null),
-      props.info || 'None, will update'
+      'div',
+      { className: 'project-detailed-info' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        props.name
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Language:',
+        _react2.default.createElement('br', null),
+        props.language || 'Unknown'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Stack:',
+        _react2.default.createElement('br', null),
+        props.stack || 'Unknown'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        ' Description:',
+        _react2.default.createElement('br', null),
+        props.info || 'None, will update'
+      )
     ),
     _react2.default.createElement(
       'div',
       { id: 'project-buttons' },
       _react2.default.createElement(
         'a',
-        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-secondary' },
+        { href: props.github || '#', target: 'blank_', className: 'btn btn-outline-light' },
         'Github'
       ),
       props.liveLink ? _react2.default.createElement(
         'a',
-        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-secondary' },
+        { href: props.liveLink, target: 'blank_', className: 'btn btn-outline-light' },
         'Live Link'
       ) : null
     )
